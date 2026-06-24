@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+@layer base {
+	html {
+		scroll-behavior: smooth;
+	}
+
+	body {
+		background: #ffffff;
+		color: #0f172a;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+
+	::selection {
+		background: rgba(244, 114, 182, 0.2);
+		color: #0f172a;
+	}
+}
+
+@layer utilities {
+	.animate-fade-up {
+		animation: aboutFadeUp 0.9s ease both;
+	}
+
+	.animate-rise {
+		animation: aboutRise 0.95s ease both;
+	}
+
+	.animate-float {
+		animation: aboutFloat 5.5s ease-in-out infinite;
+	}
+
+	.animate-slide-in-left {
+		animation: aboutSlideInLeft 0.95s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+	}
+
+	.animate-slide-in-right {
+		animation: aboutSlideInRight 0.95s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+	}
+
+	.animate-lift-on-hover {
+		transition-property: transform, box-shadow;
+	}
+}
+
+@keyframes aboutFadeUp {
+	from {
+		opacity: 0;
+		transform: translateY(24px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes aboutRise {
+	from {
+		opacity: 0;
+		transform: translate3d(0, 22px, 0) scale(0.98);
+	}
+	to {
+		opacity: 1;
+		transform: translate3d(0, 0, 0) scale(1);
+	}
+}
+
+@keyframes aboutFloat {
+	0%,
+	100% {
+		transform: translateY(0);
+	}
+	50% {
+		transform: translateY(-8px);
+	}
+}
+
+@keyframes aboutSlideInLeft {
+	from {
+		opacity: 0;
+		transform: translateX(-42px);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+@keyframes aboutSlideInRight {
+	from {
+		opacity: 0;
+		transform: translateX(42px);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
